@@ -2,21 +2,53 @@
 <html lang="en" data-framework="backbonejs">
     <head>
         <meta charset="utf-8">
-        <title>Backbone.js • TodoMVC</title>
-        <link rel="stylesheet" href="css/base.css">
-        <link rel="stylesheet" href="css/index.css">
+        <title>Skils</title>
+        <link rel="stylesheet" href="dist/css/styles.css">
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     </head>
     <body>
-        <section class="todoapp">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <form class="form-inline skils-list p-a-3">
+                    <div class="row">
+                        <div class="col-sm-12 m-b-2">
+                            <div class="form-group">
+                                <input type="text" class="form-control skil-name" id="" placeholder="Enter skil name">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control skil-level" id="" placeholder="Enter skils level">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="row">
+                        <div class="col-sm-12 m-b-2">
+                            <div class="form-group">
+                                <input type="text" class="form-control skil-name" id="" placeholder="Enter skil name">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control skil-level" id="" placeholder="Enter skils level">
+                            </div>
+                        </div>
+                    </div> -->
+                    <button type="submit" class="btn btn-primary">Add skill</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+        <!-- <section class="todoapp">
             <header class="header">
                 <h1>
                     todos
                 </h1>
                 <input type="text" id="new-todo" class="new-todo" autofocus="autofocus" placeholder="Type task name" />
             </header>
-        </section>
+        </section> -->
 
-        <section class="main">
+       <!--  <section class="main">
             <input type="checkbox" id="toggle-all" class="toggle-all">
             <label for="toggle-all">Mark all as complete</label>
             <ul class="todo-list">
@@ -25,14 +57,14 @@
             <footer class="footer">
                 
             </footer>
-        </section>
-        <div class="info">
+        </section> -->
+       <!--  <div class="info">
             <p>
                 Double click to edit todo
             </p>
 
             
-        </div>
+        </div> -->
         <script type="text/template" id="item-template">
             <div class="view">
                 <input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
@@ -63,11 +95,10 @@
         <script src="node_modules/underscore/underscore.js"></script>
         <script src="node_modules/backbone/backbone.js"></script>
         <script src="node_modules/backbone.localstorage/backbone.localStorage.js"></script>
-        <script src="js/models/todo.js"></script>
-        <script src="js/collections/todos.js"></script>
-        <script src="js/views/todo-view.js"></script>
-        <script src="js/views/app-view.js"></script>
-        <script src="js/routers/router.js"></script>
-        <script src="js/app.js"></script>
+        <script src="dist/js/models.js"></script>
+        <script src="dist/js/collections.js"></script>
+        <script src="dist/js/views.js"></script>
+        <script src="dist/js/routers.js"></script>
+        <script src="dist/js/app.js"></script>
     </body>
 </html>
