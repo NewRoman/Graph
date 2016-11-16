@@ -1,7 +1,23 @@
-h1 {
-    color: red;
+.info-block {
+    input {
+        display: none;
+    }
+
+    &.editing {
+        input {
+            display: inline-block;
+        }
+        label {
+            display: none;
+        }
+    }
 }
 
-body {
-    background-color: blue; 
+.skills-list {
+    li {
+        display: inline-block;
+        width: 100%;
+
+        border-bottom: 1px #dedede solid;
+    }
 }
