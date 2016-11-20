@@ -8,11 +8,14 @@ app.SkillView = Backbone.View.extend({
     events: {
         'dblclick label': 'edit',
         'keypress .edit': 'updateOnEnter',
-        'blur .edit': 'blurInput'
+        'blur .edit': 'blurInput',
+        'click .dell-skill' : 'delleteSkill',
     },
 
     initialize: function() {
         this.listenTo(this.model, 'change', this.render);
+        this.listenTo(this.model, 'destroy', this.remove);
+        this.$dellSkillButon = this.$('.dell-skill');
     },
 
     render: function() {
@@ -44,5 +47,10 @@ app.SkillView = Backbone.View.extend({
         if ( e.which === ENTER_KEY ) {
             this.close.call($(e.target), this.model);
         }
+    },
+
+    delleteSkill: function() {
+        this.model.destroy();
     }
+
 });

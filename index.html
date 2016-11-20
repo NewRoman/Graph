@@ -21,7 +21,13 @@
                         <input type="text" class="form-control enter-skill-name" id="" placeholder="Enter skill name">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control enter-skill-level" id="" placeholder="Enter skill's level">
+                        <input type="number" max="10" min="0" class="form-control enter-skill-level" id="" placeholder="Chose skill's level">
+                    </div>
+
+                    <div class="form-group">
+                        <button class="new-skill form-control btn btn-primary">
+                            Add new skill 
+                        </button>
                     </div>
 
                 </section>
@@ -50,21 +56,38 @@
                                 </div>
                             </li>
                         </ul>
-                        
+
+                        <div class="help-text text-sm-center m-b-2">
+                            <small class="text-muted">
+                                To edit skill's name or level's points make double click on one of it and after changes press Enter 
+                            </small>
+                        </div>
+
+
                         <footer class="row">
                             <section class="col-sm-2 p-x-3 m-b-2">
                                 <button type="submit" class="btn btn-danger clear-skills ">Remove all skills</button>
                             </section>
                             <section class="col-sm-3 p-x-3 m-b-2">
-                                <button type="submit" class="btn btn-primary  show-graph ">Show graph of level skill</button>
+                                <a href="#graph" type="submit" class="btn btn-primary  show-graph">Show graph of level skill</a>
                             </section>
                         </footer>
                     </section>
                 </div>
             </div>
-
-
+            
         </div>
+        
+        <!-- graph block -->
+        <div class="container graph">
+            <div class="row ">
+                <div class="col-sm-12">
+                    <h3 class="m-y-3 text-xs-center">Skills level graph</h3>
+                    <canvas id="myChart" width="700" height="300"></canvas>
+                </div>
+            </div>
+        </div>
+
 
         <!-- one skill template -->
         <script type="text/template" id="skill-item-template">
@@ -77,6 +100,10 @@
                     <label><%- skillLevel %></label>
                     <input class="edit" data-name="skillLevel" value="<%- skillLevel %>">
                 </div>
+                <div class="col-sm-3 info-block">
+                    <span class="dell-skill text-danger" data-model-cid=''>Dellete skill</span>
+                </div>
+
             </div>
         </script>
 
@@ -84,10 +111,12 @@
         <script src="node_modules/underscore/underscore.js"></script>
         <script src="node_modules/backbone/backbone.js"></script>
         <script src="node_modules/backbone.localstorage/backbone.localStorage.js"></script>
+        <script src="node_modules/chart.js/dist/Chart.min.js"></script>
         <script src="dist/js/skillModel.js"></script>
         <script src="dist/js/skillsListCollection.js"></script>
         <script src="dist/js/appView.js"></script>
         <script src="dist/js/skillView.js"></script>
+        <script src="dist/js/graphView.js"></script>
         <script src="dist/js/routers.js"></script>
         <script src="dist/js/app.js"></script>
     </body>
